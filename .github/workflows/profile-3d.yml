@@ -16,6 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     name: generate-github-profile-3d-contrib
     steps:
+      - name: Run
+        shell: bash
+        run: |
+          [ $((RANDOM % 2)) -eq 0 ] && exit 0
       - uses: actions/checkout@v4
       - uses: yoshi389111/github-profile-3d-contrib@latest
         env:
