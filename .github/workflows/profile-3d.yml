@@ -16,17 +16,16 @@ jobs:
     runs-on: ubuntu-latest
     name: generate-github-profile-3d-contrib
     steps:
-      - name: Run
       - uses: actions/checkout@v4
       - uses: yoshi389111/github-profile-3d-contrib@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
       - name: Commit and push files
-        uses: EndBug/add-and-commit@v7
+        uses: EndBug/add-and-commit@v9
         with:
           author_name: "Aastha Tayal" 
           author_email: "tayalaastha360@gmail.com"
-          message: "Github Actions Update Profile Summary"
+          message: "Update Profile Summary"
           add: "."
           push: "https://github.com/aasthatayal/aasthatayal.git"
